@@ -1,17 +1,22 @@
+# -*- coding: utf-8 -*-
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable, :timeoutable, :omniauthable, omniauth_providers: [:twitter]
+         :timeoutable, :omniauthable, omniauth_providers: [:twitter]
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.username = auth["info"]["nickname"]
-      user.email = User.dummy_email(auth)
+      user.email = dummy_email(auth)
+      user.password = Devise.friendly_token[0, 20]
     end
+
+    # puts('res.persisted? == true になってないです!!!') unless res.persisted? == true
+
   end
 
   def self.new_with_session(params, session)

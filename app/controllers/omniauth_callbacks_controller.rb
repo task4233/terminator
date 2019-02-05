@@ -11,9 +11,10 @@ class OmniauthCallbacksController < ApplicationController
     
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
-      sign_in_and_redirect @user, event: :authentication
+      sign_in_and_redirect @user
     else
-      session["devise.#{provider}_attributes"] = request.env['omniauth.auth']
+      flash[:notice] = I18n.t('Failed...')
+      session["devise.user_attributes"] = @user.attributes
       redirect_to new_user_registration_url
     end
   end
