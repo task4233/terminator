@@ -10,6 +10,7 @@ class User < ApplicationRecord
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.username = auth["info"]["nickname"]
+      user.email = User.dummy_email(auth)
     end
   end
 
