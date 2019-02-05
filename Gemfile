@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '5.1.6'                       # Rails
-gem 'sqlite3', '1.3.13'                    # SQL(Database)
 gem 'bcrypt', '3.1.12'                     # パスワードの暗号化
 gem 'faker', '1.4.2'                       # ダミーデータ生成
 gem 'will_paginate', '3.1.5'               # ページネート用
@@ -26,9 +25,10 @@ gem 'dotenv-rails'                         # 環境変数用
 
 
 group :development, :test do
+  gem 'sqlite3', '1.3.13'                  # SQL(Database)
   gem 'byebug', '9.0.6', platforms: :mri   # debug
 end
-
+ 
 group :development do
   gem 'web-console', '3.5.1'               # Web上でコンソールを表示
   gem 'listen', '3.1.5'                    # ファイルの変更を検知してそれをトリガとして処理ができる
