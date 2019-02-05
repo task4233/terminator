@@ -22,6 +22,8 @@ gem 'jquery-rails'                         # jquery
 gem 'omniauth-twitter'                     # Twitter Authentication
 gem 'foreman'                              # サーバを立てる時に, まとめてコマンド実行
 gem 'devise'                               # 認証系が楽になるもの
+gem 'dotenv-rails'                         # 環境変数用
+
 
 group :development, :test do
   gem 'byebug', '9.0.6', platforms: :mri   # debug
