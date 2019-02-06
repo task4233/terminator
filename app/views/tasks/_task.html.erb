@@ -1,0 +1,7 @@
+<li id="task-<%= task.id %> ">
+  <%= link_to "Done", task_path(task), method: :delete, class: "btn btn-primary center" %>
+  <span class="name"><%= task.name %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(task.created_at) %> ago.
+  </span>
+</li>

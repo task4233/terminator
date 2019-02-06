@@ -6,25 +6,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
+ 
+  <body>  
+    <%= render 'layouts/header' %>
 
-  <body>
-    <header>
-      <nav>
-        <% if user_signed_in? %>
-        <strong><%= link_to current_user.username, tasks_show_path %></strong>
-        <!-- <%= link_to 'プロフィール変更', edit_user_registration_path %> -->
-        <%= link_to 'ログアウト'      , destroy_user_session_path, method: :delete %>
-        <% else %>
-        <!-- <%= link_to '新規登録'        , new_user_registration_path %> -->
-        <!-- <%= link_to '新規登録/ログイン'        , new_user_session_path %> -->
-        <% end %>
-      </nav>
-    </header>
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+    <% console %>
   </body>
 </html>
