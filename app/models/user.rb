@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 class User < ApplicationRecord
+
+  has_many :tasks, dependent: :destroy
+
+  # ---------------------------ここからdeviseの設定---------------------------
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
