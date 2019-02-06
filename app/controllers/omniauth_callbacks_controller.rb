@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class OmniauthCallbacksController < ApplicationController
   def twitter
     callback_from :twitter
@@ -10,10 +11,10 @@ class OmniauthCallbacksController < ApplicationController
     @user = User.from_omniauth(request.env["omniauth.auth"].except("extra"))
     
     if @user.persisted?
-      flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+      flash[:success] = "Twitterアカウントでログインしました!"
       sign_in_and_redirect @user
     else
-      flash[:notice] = I18n.t('Failed...')
+      flash[:notice] = "Twitterアカウントでのログインに失敗しました..."
       session["devise.user_attributes"] = @user.attributes
       redirect_to new_user_registration_url
     end
