@@ -1,0 +1,7 @@
+<%= form_for(@task) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="col-sm-9 form-inline">
+    <%= f.text_field :name, placeholder: "新しいTaskを入力...", class: 'form-control' %>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  </div>
+<% end %>
