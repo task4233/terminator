@@ -6,4 +6,3 @@
 
 ## Gems
  - [Gemfile](/Gemfile)
-
