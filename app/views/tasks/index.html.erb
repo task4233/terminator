@@ -1,7 +1,6 @@
-<div class="container">
 <% if user_signed_in? %>
   <div class="row center">
-    <div class="col-md-11">
+    <div class="col-md-10 col-md-offset-1">
       <h2>お疲れ様です, <%= current_user.name %>さん!</h2>
       <section class="task_form">
         <%= render 'tasks/task_form' %>
@@ -33,6 +32,34 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+<div class="container">
+  <h2>Q. このアプリケーションで何ができるの?</h2>
+  <h2 class="ans">A. Todoを管理することができます。</h2>
 
-<% end %>
+  <h2>Q. 既存のTodoアプリと何が違うの?</h2>
+  <h2 class="ans">A. 以下のような違いがあります。</h2>
+  <div class="col-md-8 col-md-offset-1">
+    <table>
+      <thead>
+        <tr>
+          <th>比較ポイント</th>
+          <th>TodoアプリA</th>
+          <th>TodoアプリB</th>
+          <th>Terminator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>ホーム画面で表示されるTodoの数</th>
+          <th>7-8個</th>
+          <th>10-11個</th>
+          <th>3個</th>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+  <h1></h1>
 </div>
+<% end %>
