@@ -1,20 +1,22 @@
 <% if user_signed_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <h2>こんにちは<%= current_user.username %>さん</h2>
-      <section class="task_form">
-        <%= render 'tasks/task_form' %>
-      </section>
-  </div>
-  <ul class="collection">
+  <div class="row center">
+    <h2>こんにちは, <%= current_user.username %>さん</h2>
+    <section class="task_form">
+      <%= render 'tasks/task_form' %>
+    </section>
+  <div class="collection center">
     <% if @user.tasks.count == 0 %>
     <h3>No Tasks!</h3>
     <p>お疲れ様!</p>
     <% else %>
     <h3>Tasks(<%= @user.tasks.count %>)</h3>
-    <%= render @user.tasks.all.order(updated_at: "DESC").take(3)  %>
+    <table class="tasks-columns">
+      <tbody>
+        <%= render @user.tasks.all.order(updated_at: "DESC").take(3)  %>
+      </tbody>
+    </table>
     <% end %>
-  </ul>  
+  </div>  
 <% else %>
 <div class="center jumbotron">
   <h1>Welcome!</h1>
