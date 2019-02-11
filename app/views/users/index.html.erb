@@ -1,0 +1,8 @@
+<div class="collection center">
+  <h3>Todos(<%= @user.tasks.count %>)</h3>
+  <table class="tasks-columns">
+    <tbody>
+      <%= render @user.tasks.all %>
+    </tbody>
+  </table>
+</div>
