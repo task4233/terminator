@@ -13,8 +13,8 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build(task_params)
-    if @task.save!
-      flash[:success] = "Task created!"
+    if @task.save
+      flash[:success] = "Todoが作成されました！"
       redirect_to root_url
     else
       flash[:danger] = "Task couldn't create..."
