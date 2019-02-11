@@ -1,2 +1,17 @@
-<h1>こんにちは, <%= current_user.username %>さん</h1>
-<p>ユーザ用のページです</p>
+<h2>こんにちは, <%= current_user.username %>さん</h2>
+<p id="todo-information">このTodoの情報は以下の通りです. 
+</p>
+<table>
+  <tbody>
+    <tr> 
+      <th>Todo名</th>
+      <th>作成日時</th>
+      <th>締め切り</th>
+    </tr>
+    <tr>
+      <td><%= @task.name %></td>
+      <td><%= time_ago_in_words(@task.created_at) %>前です</td>
+      <td>あと<%= time_ago_in_words(@task.deadline) %>です</td>
+    <tr>
+  </tbody>
+</table>
