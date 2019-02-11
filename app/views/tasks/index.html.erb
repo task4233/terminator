@@ -1,15 +1,20 @@
 <% if user_signed_in? %>
   <div class="row center">
-    <h2>こんにちは, <%= current_user.username %>さん</h2>
+    <h2>お疲れ様です, <%= current_user.name %>さん!</h2>
     <section class="task_form">
       <%= render 'tasks/task_form' %>
     </section>
   <div class="collection center">
     <% if @user.tasks.count == 0 %>
-    <h3>No Tasks!</h3>
-    <p>お疲れ様!</p>
+    <h3>No Todos!</h3>
+    <p>現在, 未完了のTodoはありません。<br>
+      Todoを追加したい場合は, 上のフォームから追加してください。
+    </p>
     <% else %>
     <h3>Tasks(<%= @user.tasks.count %>)</h3>
+    <% if @user.tasks.count > 3 %>
+      <%= link_to '全てのTodoを確認する', users_path %>
+    <% end  %>
     <table class="tasks-columns">
       <tbody>
         <%= render @user.tasks.all.order(updated_at: "DESC").take(3)  %>
