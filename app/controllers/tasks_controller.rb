@@ -17,8 +17,7 @@ class TasksController < ApplicationController
       flash[:success] = "Todoが作成されました！"
       redirect_to root_url
     else
-      flash[:danger] = "Task couldn't create..."
-      redirect_to root_url
+      render '_task_form'
     end
   end
 
