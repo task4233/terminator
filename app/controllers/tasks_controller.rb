@@ -56,11 +56,11 @@ class TasksController < ApplicationController
       config.access_token_secret = ENV['POST_TWITTER_ACCESS_TOKEN_SECRET']
     end
 
-    rnd = rand(100)
+    # rnd = rand(100)
     # puts(rnd)
     # puts("hoge")
     # 5%の確率でツイート
-    return if rnd > 5
+    # return if rnd > 5
       
     res = "@#{current_user.username}\n"
     res += "#{current_user.name}さんが#{task.name}を完了しました!"
