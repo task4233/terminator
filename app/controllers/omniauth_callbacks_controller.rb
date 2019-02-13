@@ -3,6 +3,10 @@ class OmniauthCallbacksController < ApplicationController
   def twitter
     callback_from :twitter
   end
+  
+  def failure
+    redirect_to root_url, alert: "認証に失敗しました"
+  end
 
   private
   def callback_from(provider)
