@@ -14,12 +14,12 @@ $modal-inner-padding: 30px;
 $modal-title-padding: 30px;
 
 @import "bootstrap";
-@import "bootstrap-sprockets";
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
 $gray-light: #777;
 $gray-dark: #546E7A;
+$b-blue: #2D6FAE;
 
 @mixin box-sizing {
   -moz-box-sizing: border-box;
@@ -121,6 +121,26 @@ p {
   border: 1px black solid;
   tr {
     border: 10px white solid;
+  }
+}
+
+/* about partial */
+.about {
+  .ans {
+    color: $b-blue;
+  }
+  ul {
+    font-size: large;
+  }
+}
+
+/* links */
+.login-path {
+  text-decoration: none;
+  color: ghostwhite;
+  &:visited, &:focus, &:hover {
+    text-decoration: none;
+    color: ghostwhite;
   }
 }
 
