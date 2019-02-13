@@ -39,7 +39,7 @@ $gray-dark: #546E7A;
 }
 
 body{
-  @include fz_vw(13);
+  @include fz_vw(20);
 }
 
 /* universal */
@@ -189,9 +189,11 @@ aside {
 #error_explanation {
   color: red;
   ul {
+    text-align: left;
     color: red;
     margin: 0 0 3% 0;
   }
+  margin: auto;
 }
 
 .field_with_errors {

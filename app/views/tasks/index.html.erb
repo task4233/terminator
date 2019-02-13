@@ -1,9 +1,13 @@
+<div class="container">
 <% if user_signed_in? %>
   <div class="row center">
-    <h2>お疲れ様です, <%= current_user.name %>さん!</h2>
-    <section class="task_form">
-      <%= render 'tasks/task_form' %>
-    </section>
+    <div class="col-md-10 col-md-offset-1">
+      <h2>お疲れ様です, <%= current_user.name %>さん!</h2>
+      <section class="task_form">
+        <%= render 'tasks/task_form' %>
+      </section>
+    </div>
+  </div>
   <div class="collection center">
     <% if @user.tasks.count == 0 %>
     <h3>No Todos!</h3>
@@ -31,3 +35,4 @@
 </div>
 
 <% end %>
+</div>
