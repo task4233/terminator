@@ -3,6 +3,7 @@
 ## Features
  - Todo Application
  - Twitter Authentication(Sign In/Out)
+ - Tweet Your Progress(A Certian Probability)
 
 ## Gems
  - [Gemfile](/Gemfile)
