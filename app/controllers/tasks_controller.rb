@@ -59,11 +59,12 @@ class TasksController < ApplicationController
     rnd = rand(100)
     # puts(rnd)
     # puts("hoge")
-    # 30%の確率でツイート
-    return if rnd > 30
+    # 50%の確率でツイート
+    return if rnd > 50
       
     res = "@#{current_user.username}\n"
-    res += "#{current_user.name}さんが期限の#{distance_of_months(task.deadline)}前に#{task.name}を完了しました!"
+    res += "#{current_user.name}さんが期限の#{distance_of_months(task.deadline)}前に#{task.name}を完了しました!\n"
+    res += "お疲れ様です!"
     client.update(res)
   end
 
