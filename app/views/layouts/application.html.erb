@@ -15,7 +15,7 @@
 
     <div class="container">
       <% flash.each do |message_type, message| %>
-        <% if !(message.kind_of?(boolean)) %>
+        <% if !(message.is_a?(FalseClass) || message.is_a?(TrueClass)) %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
       <% end %>
