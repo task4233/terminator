@@ -1,8 +1,25 @@
+/* bootstrap */
+$theme-colors: (
+  primary: skyblue,
+  main: black
+);
+
+$headings-line-height: 1.5;
+$line-height-base: 1.65;
+$letter-spacing: .1em;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+
+$modal-inner-padding: 30px;
+$modal-title-padding: 30px;
+
 @import "bootstrap";
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
 $gray-light: #777;
+$gray-dark: #546E7A;
+$b-blue: #2D6FAE;
 
 @mixin box-sizing {
   -moz-box-sizing: border-box;
@@ -10,9 +27,25 @@ $gray-light: #777;
   box-sizing: border-box;
 }
 
+// 第一引数で基準となる画面幅のフォントサイズ、第二引数で基準となる画面幅を入力
+@function get_vw($size, $viewport:320){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+body{
+  @include fz_vw(20);
+}
+
 /* universal */
 body {
   padding-top: 6%;
+  text-align: justify;
 }
 
 section {
@@ -23,6 +56,10 @@ textarea {
   resize: vertical;
 }
 
+.container {
+  width: 100% !important;
+} 
+
 .row {
   margin-top: 10%;
 }
@@ -32,6 +69,10 @@ textarea {
   h1 {
     margin-bottom: 1%;
   }
+}
+
+.alert {
+  margin-top: 5%;
 }
 
 /* typography */
@@ -63,17 +104,52 @@ p {
 
 /* list todos */
 .collection {
+  margin: auto;
   li {
-  margin-left: 10px;
-  margin-bottom: 1%;
+    list-style: none;
+    margin-bottom: 1%;
     span {
+      width: 20%;
       font-size: medium;
-      margin-left: 10px;
     }
   }
 }
 
+.tasks-columns {
+  margin: auto;
+  width: 90%;
+  border: 1px black solid;
+  tr {
+    border: 10px white solid;
+  }
+}
+
+/* about partial */
+.about {
+  .ans {
+    color: $b-blue;
+  }
+  ul {
+    font-size: large;
+  }
+}
+
+/* links */
+.login-path {
+  text-decoration: none;
+  color: ghostwhite;
+  &:visited, &:focus, &:hover {
+    text-decoration: none;
+    color: ghostwhite;
+  }
+}
+
 /* forms */
+.form-element {
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+
 
 input[type="text"] {
   width: 100%;
@@ -81,12 +157,25 @@ input[type="text"] {
 
 textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: auto;
+  width: 100%;
   @include box_sizing;
 }
 
 input {
   margin-left: 10px;
+  height: auto !important;
+}
+
+/*
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+*/
+
+input {
   height: auto !important;
 }
 
@@ -120,9 +209,11 @@ aside {
 #error_explanation {
   color: red;
   ul {
+    text-align: left;
     color: red;
     margin: 0 0 3% 0;
   }
+  margin: auto;
 }
 
 .field_with_errors {
@@ -172,23 +263,23 @@ footer {
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
   
-  a {
-    color: gray;
-    &:hover {
-      color: $gray-light;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  }
+  /* a { */
+  /*   color: gray; */
+  /*   &:hover { */
+  /*     color: $gray-light; */
+  /*   } */
+  /* } */
+  /* small { */
+  /*   float: left; */
+  /* } */
+  /* ul { */
+  /*   float: right; */
+  /*   list-style: none; */
+  /*   li { */
+  /*     float: left; */
+  /*     margin-left: 10px; */
+  /*   } */
+  /* } */
 }
 
 /* miscellaneous */

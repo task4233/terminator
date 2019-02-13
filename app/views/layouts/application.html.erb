@@ -7,12 +7,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
+    <%= analytics_init if Rails.env.production? %>
   </head>
  
   <body>  
     <%= render 'layouts/header' %>
 
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <% if !(message.kind_of?(boolean)) %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>

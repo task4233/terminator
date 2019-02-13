@@ -258,8 +258,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :twitter, ENV["TWITTER_API_KEY"], ENV["TWITTER_API_SECRET_KEY"], oauth_callback: ENV["CALLBACK_URL"]
-
+  config.omniauth :twitter, ENV["LOGIN_TWITTER_API_KEY"], ENV["LOGIN_TWITTER_API_SECRET_KEY"], oauth_callback: ENV["LOGIN_CALLBACK_URL"]
+  
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -287,6 +287,6 @@ Devise.setup do |config|
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
   #
   # ActiveSupport.on_load(:devise_failure_app) do
-  #   include Turbolinks::Controller
+  #  include Turbolinks::Controller
   # end
 end
