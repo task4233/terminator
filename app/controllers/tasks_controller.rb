@@ -60,7 +60,7 @@ class TasksController < ApplicationController
     # puts(rnd)
     # puts("hoge")
     # 30%の確率でツイート
-    # return if rnd > 30
+    return if rnd > 30
       
     res = "@#{current_user.username}\n"
     res += "#{current_user.name}さんが期限の#{distance_of_months(task.deadline)}前に#{task.name}を完了しました!"
