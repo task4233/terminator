@@ -39,7 +39,8 @@ module Sns::Tw extend self
       
        res = "@#{user.username}\n"
        res += "#{user.name}さんの#{task.name}の締め切りは本日に設定されています。\n"
-       res += "頑張って終わらせましょう!"
+       res += "頑張って終わらせましょう!\n"
+       res += "https://task4233-terminator.herokuapp.com/"
        client.update(res)
      end
 
