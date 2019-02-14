@@ -25,6 +25,7 @@ gem 'dotenv-rails'                         # 環境変数用
 gem 'twitter'                              # Twitter Bot用
 gem 'rails-i18n'                           # 日本語対応
 gem 'google-analytics-rails'               # Google Analytics
+gem 'whenever'                             # 自動tui
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'                  # SQL(Database)
