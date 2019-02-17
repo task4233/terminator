@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Task < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(deadline: :asc) }
+  default_scope -> { order(deadline: :desc) }
   validates :name, presence: true, length: { maximum: 128 }
   validates :deadline, presence: true
   validate  :validate_deadline
