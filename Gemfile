@@ -10,7 +10,7 @@ gem 'bcrypt', '3.1.12'                     # パスワードの暗号化
 gem 'faker', '1.4.2'                       # ダミーデータ生成
 gem 'will_paginate', '3.1.5'               # ページネート用
 gem 'bootstrap-will_paginate', '0.0.10'    # ページネート用
-gem 'bootstrap-sass', '3.3.7'              # bootstrap用のsass
+gem 'bootstrap-sass', '>= 3.4.1'           # bootstrap用のsass
 gem 'puma', '3.9.1'                        # Webサーバを立てる
 gem 'sass-rails', '5.0.6'                  # sass用
 gem 'uglifier', '3.2.0'                    # JavaScriptの軽量化ライブラリUglifyJS2を使用できるようにする
