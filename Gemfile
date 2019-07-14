@@ -18,7 +18,7 @@ gem 'coffee-rails', '4.2.2'                # CoffeeScript
 gem 'turbolinks', '5.0.1'                  # ページ遷移をAjaxに置き換えて高速化する
 gem 'jbuilder', '2.7.0'                    # API用のjsonテンプレートエンジン
 gem 'jquery-rails'                         # jquery
-gem 'omniauth-twitter'                     # Twitter Authentication
+gem 'omniauth-rails_csrf_protection'       # Twitter Authentication
 gem 'foreman'                              # サーバを立てる時に, まとめてコマンド実行
 gem 'devise'                               # 認証系が楽になるもの
 gem 'dotenv-rails'                         # 環境変数用
