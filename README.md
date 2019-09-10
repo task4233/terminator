@@ -1,5 +1,7 @@
 # Overview
 
+Todo Application Connected Your Twitter Account.
+
 ## Features
  - Todo Application
  - Twitter Authentication(Sign In/Out)
