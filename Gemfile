@@ -11,7 +11,7 @@ gem 'faker', '2.2.0'                       # ダミーデータ生成
 gem 'will_paginate', '3.1.8'               # ページネート用
 gem 'bootstrap-will_paginate', '1.0.0'     # ページネート用
 gem 'bootstrap-sass', '3.4.1'              # bootstrap用のsass
-gem 'puma', '4.1.0'                        # Webサーバを立てる
+gem 'puma', '4.3.1'                        # Webサーバを立てる
 gem 'sass-rails', '6.0.0'                  # sass用
 gem 'uglifier', '4.1.20'                    # JavaScriptの軽量化ライブラリUglifyJS2を使用できるようにする
 gem 'coffee-rails', '5.0.0'                # CoffeeScript
